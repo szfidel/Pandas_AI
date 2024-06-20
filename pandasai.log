@@ -6046,3 +6046,1407 @@ print(column_types)
 2024-06-19 21:35:41 [INFO] Executing Step 2: CodeCleaning
 2024-06-19 21:35:41 [ERROR] Pipeline failed on step 2: name 'Python' is not defined
 2024-06-19 21:35:41 [ERROR] Pipeline failed on step 6: name 'Python' is not defined
+2024-06-20 07:51:45 [INFO] Question: Draw a bar chart of the store locations with seaborn
+2024-06-20 07:51:45 [INFO] Running PandasAI with local LLM...
+2024-06-20 07:51:45 [INFO] Prompt ID: f0788134-3656-48b0-8ac1-b582a877055f
+2024-06-20 07:51:45 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-20 07:51:45 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-20 07:51:45 [INFO] Executing Step 1: CacheLookup
+2024-06-20 07:51:45 [INFO] Executing Step 2: PromptGeneration
+2024-06-20 07:51:45 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+114152,2023-01-04,17:24:17,2,5,Lower Manhattan,25,28.0,Bakery,Brewed Green tea,Scottish Cream Scone ,Sunday,2.65
+58359,2023-05-26,12:52:28,1,3,Astoria,36,22.5,Loose Tea,Organic Beans,Our Old Time Diner Blend,Monday,21.0
+66795,2023-06-27,6:45:47,4,8,Hell's Kitchen,55,2.2,Flavours,Herbal tea,Ethiopia Sm,Tuesday,7.5
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Draw a bar chart of the store locations with seaborn
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-20 07:51:45 [INFO] Executing Step 3: CodeGenerator
+2024-06-20 07:51:59 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:51:59 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+114152,2023-01-04,17:24:17,2,5,Lower Manhattan,25,28.0,Bakery,Brewed Green tea,Scottish Cream Scone ,Sunday,2.65
+58359,2023-05-26,12:52:28,1,3,Astoria,36,22.5,Loose Tea,Organic Beans,Our Old Time Diner Blend,Monday,21.0
+66795,2023-06-27,6:45:47,4,8,Hell's Kitchen,55,2.2,Flavours,Herbal tea,Ethiopia Sm,Tuesday,7.5
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Draw a bar chart of the store locations with seaborn
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-20 07:51:59 [INFO] Code generated:
+            ```
+            import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# TODO: import the required dependencies
+dfs = [pd.DataFrame([...])]
+
+result = { "type": "plot", "value": "" }
+
+# Get all unique store locations
+store_locations = dfs[0]['store_location'].unique()
+
+# Create a bar chart with seaborn
+plt.figure(figsize=(10,6))
+sns.barplot(x=store_locations, y=[dfs[0][dfs[0]['store_location'] == loc].shape[0] for loc in store_locations])
+plt.title("Store Locations")
+plt.xlabel("Store Location")
+plt.ylabel("Number of Transactions")
+
+# Save the plot as a PNG file
+plt.savefig('store_locations.png')
+
+result = { "type": "plot", "value": 'store_locations.png' }
+
+print(result)
+            ```
+            
+2024-06-20 07:51:59 [INFO] Executing Step 4: CachePopulation
+2024-06-20 07:51:59 [INFO] Executing Step 5: CodeCleaning
+2024-06-20 07:51:59 [INFO] Saving charts to /Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png
+2024-06-20 07:51:59 [INFO] 
+Code running:
+```
+result = {'type': 'plot', 'value': ''}
+store_locations = dfs[0]['store_location'].unique()
+plt.figure(figsize=(10, 6))
+sns.barplot(x=store_locations, y=[dfs[0][dfs[0]['store_location'] == loc].shape[0] for loc in store_locations])
+plt.title('Store Locations')
+plt.xlabel('Store Location')
+plt.ylabel('Number of Transactions')
+plt.savefig('/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+print(result)
+        ```
+2024-06-20 07:51:59 [INFO] Executing Step 6: CodeExecution
+2024-06-20 07:52:00 [INFO] Executing Step 7: ResultValidation
+2024-06-20 07:52:00 [INFO] Answer: {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+2024-06-20 07:52:00 [INFO] Executing Step 8: ResultParsing
+2024-06-20 07:52:29 [INFO] Question: can you list all the store_locations
+2024-06-20 07:52:29 [INFO] Running PandasAI with local LLM...
+2024-06-20 07:52:29 [INFO] Prompt ID: 057ef7c1-738d-4c88-9ad5-a1e6bcf420a8
+2024-06-20 07:52:29 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-20 07:52:29 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-20 07:52:29 [INFO] Executing Step 1: CacheLookup
+2024-06-20 07:52:29 [INFO] Executing Step 2: PromptGeneration
+2024-06-20 07:52:29 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+39955,2023-02-05,20:44:25,8,8,Hell's Kitchen,30,2.45,Bakery,Brewed Green tea,Earl Grey Lg,Wednesday,19.75
+8310,2023-03-08,9:18:27,1,5,Astoria,9,2.2,Packaged Chocolate,Housewares,Dark chocolate Rg,Friday,10.95
+11112,2023-03-04,7:17:41,3,3,Lower Manhattan,59,3.0,Coffee beans,Gourmet Beans,Ginger Biscotti,Saturday,0.8
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ can you list all the store_locations
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-20 07:52:29 [INFO] Executing Step 3: CodeGenerator
+2024-06-20 07:52:39 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:52:39 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+39955,2023-02-05,20:44:25,8,8,Hell's Kitchen,30,2.45,Bakery,Brewed Green tea,Earl Grey Lg,Wednesday,19.75
+8310,2023-03-08,9:18:27,1,5,Astoria,9,2.2,Packaged Chocolate,Housewares,Dark chocolate Rg,Friday,10.95
+11112,2023-03-04,7:17:41,3,3,Lower Manhattan,59,3.0,Coffee beans,Gourmet Beans,Ginger Biscotti,Saturday,0.8
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ can you list all the store_locations
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-20 07:52:39 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Read data from dfs[0]
+dfs = [pd.DataFrame({
+    'transaction_id': [39955, 8310, 11112],
+    'transaction_date': ['2023-02-05', '2023-03-08', '2023-03-04'],
+    'transaction_time': ['20:44:25', '9:18:27', '7:17:41'],
+    'transaction_qty': [8, 1, 3],
+    'store_id': [8, 5, 3],
+    'store_location': ['Hell\'s Kitchen', 'Astoria', 'Lower Manhattan'],
+    'product_id': [30, 9, 59],
+    'unit_price': [2.45, 2.2, 3.0],
+    'product_category': ['Bakery', 'Packaged Chocolate', 'Coffee beans'],
+    'product_type': ['Earl Grey Lg', 'Housewares', 'Gourmet Beans'],
+    'product_detail': ['Dark chocolate Rg', 'Ginger Biscotti', ''],
+    'Weekday': ['Wednesday', 'Friday', 'Saturday'],
+    'Revenue': [19.75, 10.95, 0.8]
+})]
+
+# List all the store_locations
+store_locations = list(set([row['store_location'] for row in dfs[0].to_dict('records')]))
+
+# Declare result var:
+result = {"type": "dataframe", "value": pd.DataFrame({'Store Locations': store_locations})}
+
+print(result)
+            ```
+            
+2024-06-20 07:52:39 [INFO] Executing Step 4: CachePopulation
+2024-06-20 07:52:39 [INFO] Executing Step 5: CodeCleaning
+2024-06-20 07:52:39 [INFO] 
+Code running:
+```
+store_locations = list(set([row['store_location'] for row in dfs[0].to_dict('records')]))
+result = {'type': 'dataframe', 'value': pd.DataFrame({'Store Locations': store_locations})}
+print(result)
+        ```
+2024-06-20 07:52:39 [INFO] Executing Step 6: CodeExecution
+2024-06-20 07:52:40 [INFO] Executing Step 7: ResultValidation
+2024-06-20 07:52:40 [INFO] Answer: {'type': 'dataframe', 'value':    Store Locations
+0  Lower Manhattan
+1   Hell's Kitchen
+2          Astoria}
+2024-06-20 07:52:40 [INFO] Executing Step 8: ResultParsing
+2024-06-20 07:53:06 [INFO] Question: which is the most common time of transaction by location
+2024-06-20 07:53:06 [INFO] Running PandasAI with local LLM...
+2024-06-20 07:53:06 [INFO] Prompt ID: eae445a9-4c6d-4af0-a28b-47e4a22749f4
+2024-06-20 07:53:06 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-20 07:53:06 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-20 07:53:06 [INFO] Executing Step 1: CacheLookup
+2024-06-20 07:53:06 [INFO] Executing Step 2: PromptGeneration
+2024-06-20 07:53:06 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+33379,2023-05-06,16:55:59,3,5,Hell's Kitchen,44,45.0,Drinking Chocolate,Clothing,Columbian Medium Roast Rg,Monday,8.0
+44347,2023-04-17,8:49:54,2,8,Astoria,37,2.2,Packaged Chocolate,Drip coffee,Sustainably Grown Organic Rg,Sunday,3.0
+84519,2023-06-12,12:41:33,4,3,Lower Manhattan,81,12.0,Loose Tea,Brewed Black tea,Primo Espresso Roast,Saturday,2.65
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ which is the most common time of transaction by location
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-20 07:53:06 [INFO] Executing Step 3: CodeGenerator
+2024-06-20 07:53:16 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:53:16 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+33379,2023-05-06,16:55:59,3,5,Hell's Kitchen,44,45.0,Drinking Chocolate,Clothing,Columbian Medium Roast Rg,Monday,8.0
+44347,2023-04-17,8:49:54,2,8,Astoria,37,2.2,Packaged Chocolate,Drip coffee,Sustainably Grown Organic Rg,Sunday,3.0
+84519,2023-06-12,12:41:33,4,3,Lower Manhattan,81,12.0,Loose Tea,Brewed Black tea,Primo Espresso Roast,Saturday,2.65
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ which is the most common time of transaction by location
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-20 07:53:16 [INFO] Code generated:
+            ```
+            Python
+import pandas as pd
+import matplotlib.pyplot as plt
+from collections import defaultdict
+import dateutil.parser
+
+# Initialize a dictionary to store the transaction counts by location
+transaction_counts = defaultdict(int)
+
+# Iterate over each dataframe in dfs
+for df in dfs:
+    # Iterate over each row in the dataframe
+    for index, row in df.iterrows():
+        # Extract the transaction time and store location from the current row
+        transaction_time = dateutil.parser.parse(row['transaction_time']).time().hour
+        store_location = row['store_location']
+
+        # Increment the count of transactions at this store location
+        transaction_counts[store_location] += 1
+
+# Find the most common store location by counting the number of transactions
+most_common_location = max(transaction_counts, key=transaction_counts.get)
+
+# Print out the result
+result = {"type": "string", "value": f"The most common time of transaction is at {most_common_location}."}
+
+# Plot a bar chart to show the transaction counts by location
+plt.figure(figsize=(10, 6))
+plt.bar(transaction_counts.keys(), transaction_counts.values())
+plt.xlabel("Store Location")
+plt.ylabel("Transaction Count")
+plt.title(f"Transaction Counts by Store Location")
+plt.savefig("transaction_counts_by_location.png")
+
+return result
+            ```
+            
+2024-06-20 07:53:16 [INFO] Executing Step 4: CachePopulation
+2024-06-20 07:53:16 [INFO] Executing Step 5: CodeCleaning
+2024-06-20 07:53:16 [INFO] Saving charts to /Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png
+2024-06-20 07:53:16 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-20 07:53:16 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-20 07:53:16 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+33379,2023-05-06,16:55:59,3,5,Hell's Kitchen,44,45.0,Drinking Chocolate,Clothing,Columbian Medium Roast Rg,Monday,8.0
+44347,2023-04-17,8:49:54,2,8,Astoria,37,2.2,Packaged Chocolate,Drip coffee,Sustainably Grown Organic Rg,Sunday,3.0
+84519,2023-06-12,12:41:33,4,3,Lower Manhattan,81,12.0,Loose Tea,Brewed Black tea,Primo Espresso Roast,Saturday,2.65
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ which is the most common time of transaction by location
+
+You generated this python code:
+Python
+import pandas as pd
+import matplotlib.pyplot as plt
+from collections import defaultdict
+import dateutil.parser
+
+# Initialize a dictionary to store the transaction counts by location
+transaction_counts = defaultdict(int)
+
+# Iterate over each dataframe in dfs
+for df in dfs:
+    # Iterate over each row in the dataframe
+    for index, row in df.iterrows():
+        # Extract the transaction time and store location from the current row
+        transaction_time = dateutil.parser.parse(row['transaction_time']).time().hour
+        store_location = row['store_location']
+
+        # Increment the count of transactions at this store location
+        transaction_counts[store_location] += 1
+
+# Find the most common store location by counting the number of transactions
+most_common_location = max(transaction_counts, key=transaction_counts.get)
+
+# Print out the result
+result = {"type": "string", "value": f"The most common time of transaction is at {most_common_location}."}
+
+# Plot a bar chart to show the transaction counts by location
+plt.figure(figsize=(10, 6))
+plt.bar(transaction_counts.keys(), transaction_counts.values())
+plt.xlabel("Store Location")
+plt.ylabel("Transaction Count")
+plt.title(f"Transaction Counts by Store Location")
+plt.savefig("transaction_counts_by_location.png")
+
+return result
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 95, in execute
+    code_to_run = self.get_code_to_run(input, code_context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 148, in get_code_to_run
+    code_to_run = self._clean_code(code, context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 459, in _clean_code
+    self._check_imports(node)
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 555, in _check_imports
+    raise BadImportError(library)
+pandasai.exceptions.BadImportError: Generated code includes import of collections which is not in whitelist.
+
+
+Fix the python code above and return the new python code:
+2024-06-20 07:53:16 [INFO] Executing Step 1: CodeGenerator
+2024-06-20 07:53:25 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:53:25 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+33379,2023-05-06,16:55:59,3,5,Hell's Kitchen,44,45.0,Drinking Chocolate,Clothing,Columbian Medium Roast Rg,Monday,8.0
+44347,2023-04-17,8:49:54,2,8,Astoria,37,2.2,Packaged Chocolate,Drip coffee,Sustainably Grown Organic Rg,Sunday,3.0
+84519,2023-06-12,12:41:33,4,3,Lower Manhattan,81,12.0,Loose Tea,Brewed Black tea,Primo Espresso Roast,Saturday,2.65
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ which is the most common time of transaction by location
+
+You generated this python code:
+Python
+import pandas as pd
+import matplotlib.pyplot as plt
+from collections import defaultdict
+import dateutil.parser
+
+# Initialize a dictionary to store the transaction counts by location
+transaction_counts = defaultdict(int)
+
+# Iterate over each dataframe in dfs
+for df in dfs:
+    # Iterate over each row in the dataframe
+    for index, row in df.iterrows():
+        # Extract the transaction time and store location from the current row
+        transaction_time = dateutil.parser.parse(row['transaction_time']).time().hour
+        store_location = row['store_location']
+
+        # Increment the count of transactions at this store location
+        transaction_counts[store_location] += 1
+
+# Find the most common store location by counting the number of transactions
+most_common_location = max(transaction_counts, key=transaction_counts.get)
+
+# Print out the result
+result = {"type": "string", "value": f"The most common time of transaction is at {most_common_location}."}
+
+# Plot a bar chart to show the transaction counts by location
+plt.figure(figsize=(10, 6))
+plt.bar(transaction_counts.keys(), transaction_counts.values())
+plt.xlabel("Store Location")
+plt.ylabel("Transaction Count")
+plt.title(f"Transaction Counts by Store Location")
+plt.savefig("transaction_counts_by_location.png")
+
+return result
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 95, in execute
+    code_to_run = self.get_code_to_run(input, code_context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 148, in get_code_to_run
+    code_to_run = self._clean_code(code, context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 459, in _clean_code
+    self._check_imports(node)
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_cleaning.py", line 555, in _check_imports
+    raise BadImportError(library)
+pandasai.exceptions.BadImportError: Generated code includes import of collections which is not in whitelist.
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-20 07:53:25 [INFO] Code generated:
+            ```
+            import pandas as pd
+from collections import Counter
+import matplotlib.pyplot as plt
+
+# Assuming dfs contains your dataframe(s)
+for df in dfs:
+    pass
+
+# Initialize a dictionary to store the transaction counts by location
+transaction_counts = {}
+
+# Iterate over each row in the dataframe
+for index, row in df.iterrows():
+    # Extract the transaction time and store location from the current row
+    store_location = row['store_location']
+    
+    # Increment the count of transactions at this store location
+    if store_location in transaction_counts:
+        transaction_counts[store_location] += 1
+    else:
+        transaction_counts[store_location] = 1
+
+# Find the most common store location by counting the number of transactions
+most_common_location = Counter(transaction_counts).most_common(1)[0][0]
+
+# Print out the result
+result = {"type": "string", "value": f"The most common time of transaction is at {most_common_location}."}
+
+# Plot a bar chart to show the transaction counts by location
+plt.figure(figsize=(10, 6))
+plt.bar(transaction_counts.keys(), transaction_counts.values())
+plt.xlabel("Store Location")
+plt.ylabel("Transaction Count")
+plt.title(f"Transaction Counts by Store Location")
+plt.savefig("transaction_counts_by_location.png")
+
+return result
+            ```
+            
+2024-06-20 07:53:25 [INFO] Executing Step 2: CodeCleaning
+2024-06-20 07:53:25 [INFO] Saving charts to /Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png
+2024-06-20 07:53:25 [ERROR] Pipeline failed on step 2: Generated code includes import of collections which is not in whitelist.
+2024-06-20 07:53:25 [ERROR] Pipeline failed on step 5: Generated code includes import of collections which is not in whitelist.
+2024-06-20 07:54:05 [INFO] Question: Are there any duplicate values
+2024-06-20 07:54:05 [INFO] Running PandasAI with local LLM...
+2024-06-20 07:54:05 [INFO] Prompt ID: b7a20dbb-9763-4d2a-8480-bd8f62ab1be0
+2024-06-20 07:54:05 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-20 07:54:05 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-20 07:54:05 [INFO] Executing Step 1: CacheLookup
+2024-06-20 07:54:05 [INFO] Executing Step 2: PromptGeneration
+2024-06-20 07:54:05 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+8529,2023-05-06,17:55:49,4,3,Hell's Kitchen,33,4.69,Coffee,Housewares,Latte,Wednesday,13.33
+149033,2023-01-23,7:40:46,3,5,Lower Manhattan,35,13.33,Packaged Chocolate,Hot chocolate,English Breakfast Rg,Saturday,6.2
+47035,2023-04-15,19:40:36,2,8,Astoria,83,21.0,Tea,Espresso Beans,Columbian Medium Roast,Thursday,14.75
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Are there any duplicate values
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-20 07:54:05 [INFO] Executing Step 3: CodeGenerator
+2024-06-20 07:54:17 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:54:17 [ERROR] Pipeline failed on step 3: No code found in the response
+2024-06-20 07:55:01 [INFO] Question: Draw a bar chart with the transactions per month of Lower Manhattan location
+2024-06-20 07:55:01 [INFO] Running PandasAI with local LLM...
+2024-06-20 07:55:01 [INFO] Prompt ID: 5f81252f-7f9a-4505-a071-f99da95c8e07
+2024-06-20 07:55:01 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-20 07:55:01 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-20 07:55:01 [INFO] Executing Step 1: CacheLookup
+2024-06-20 07:55:01 [INFO] Executing Step 2: PromptGeneration
+2024-06-20 07:55:01 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+86173,2023-06-07,16:26:11,3,8,Lower Manhattan,72,3.5,Loose Tea,Organic Chocolate,Spicy Eye Opener Chai,Sunday,6.0
+102323,2023-01-17,7:57:09,8,3,Hell's Kitchen,29,2.55,Coffee,Chai tea,Guatemalan Sustainably Grown,Tuesday,3.0
+68459,2023-03-24,15:50:06,1,5,Astoria,52,28.0,Tea,Brewed herbal tea,Lemon Grass Lg,Wednesday,5.3
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Draw a bar chart with the transactions per month of Lower Manhattan location
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-20 07:55:01 [INFO] Executing Step 3: CodeGenerator
+2024-06-20 07:55:08 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:55:08 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+86173,2023-06-07,16:26:11,3,8,Lower Manhattan,72,3.5,Loose Tea,Organic Chocolate,Spicy Eye Opener Chai,Sunday,6.0
+102323,2023-01-17,7:57:09,8,3,Hell's Kitchen,29,2.55,Coffee,Chai tea,Guatemalan Sustainably Grown,Tuesday,3.0
+68459,2023-03-24,15:50:06,1,5,Astoria,52,28.0,Tea,Brewed herbal tea,Lemon Grass Lg,Wednesday,5.3
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Draw a bar chart with the transactions per month of Lower Manhattan location
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-20 07:55:08 [INFO] Code generated:
+            ```
+            # Import required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data into a DataFrame
+dfs = [...]
+df = dfs[0]
+
+# Filter transactions by Lower Manhattan location
+lower_manhattan_df = df[df['store_location'] == 'Lower Manhattan']
+
+# Group transactions by month and count the number of transactions
+monthly_transactions = lower_manhattan_df.resample('month', on='transaction_date')['Revenue'].count()
+
+# Plot a bar chart of monthly transactions
+fig, ax = plt.subplots()
+bar_width = 0.35
+opacity = 0.4
+ax.bar(range(len(monthly_transactions)), monthly_transactions, bar_width, alpha=opacity)
+ax.set_xlabel('Month')
+ax.set_ylabel('Transactions')
+ax.set_title('Transactions per Month - Lower Manhattan')
+
+# Save the chart as a PNG file
+plt.savefig('lower_manhattan_transactions.png', dpi=300)
+
+# Declare result variable
+result = {"type": "plot", "value": 'lower_manhattan_transactions.png'}
+            ```
+            
+2024-06-20 07:55:08 [INFO] Executing Step 4: CachePopulation
+2024-06-20 07:55:08 [INFO] Executing Step 5: CodeCleaning
+2024-06-20 07:55:08 [INFO] Saving charts to /Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png
+2024-06-20 07:55:08 [INFO] 
+Code running:
+```
+df = dfs[0]
+lower_manhattan_df = df[df['store_location'] == 'Lower Manhattan']
+monthly_transactions = lower_manhattan_df.resample('month', on='transaction_date')['Revenue'].count()
+fig, ax = plt.subplots()
+bar_width = 0.35
+opacity = 0.4
+ax.bar(range(len(monthly_transactions)), monthly_transactions, bar_width, alpha=opacity)
+ax.set_xlabel('Month')
+ax.set_ylabel('Transactions')
+ax.set_title('Transactions per Month - Lower Manhattan')
+plt.savefig('/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png', dpi=300)
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+        ```
+2024-06-20 07:55:08 [INFO] Executing Step 6: CodeExecution
+2024-06-20 07:55:08 [ERROR] Failed with error: Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 3878, in pandas._libs.tslibs.offsets._get_offset
+KeyError: 'MONTH'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 3979, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 3884, in pandas._libs.tslibs.offsets._get_offset
+ValueError: Invalid frequency: MONTH
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/frame.py", line 11392, in resample
+    return super().resample(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/generic.py", line 8858, in resample
+    return get_resampler(
+           ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/resample.py", line 1543, in get_resampler
+    tg = TimeGrouper(**kwds)
+         ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/resample.py", line 1613, in __init__
+    freq = to_offset(freq)
+           ^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/offsets.pyx", line 3891, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 3987, in pandas._libs.tslibs.offsets.to_offset
+ValueError: Invalid frequency: month
+
+2024-06-20 07:55:08 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-06-20 07:55:08 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-20 07:55:08 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-20 07:55:08 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+86173,2023-06-07,16:26:11,3,8,Lower Manhattan,72,3.5,Loose Tea,Organic Chocolate,Spicy Eye Opener Chai,Sunday,6.0
+102323,2023-01-17,7:57:09,8,3,Hell's Kitchen,29,2.55,Coffee,Chai tea,Guatemalan Sustainably Grown,Tuesday,3.0
+68459,2023-03-24,15:50:06,1,5,Astoria,52,28.0,Tea,Brewed herbal tea,Lemon Grass Lg,Wednesday,5.3
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Draw a bar chart with the transactions per month of Lower Manhattan location
+
+You generated this python code:
+df = dfs[0]
+lower_manhattan_df = df[df['store_location'] == 'Lower Manhattan']
+monthly_transactions = lower_manhattan_df.resample('month', on='transaction_date')['Revenue'].count()
+fig, ax = plt.subplots()
+bar_width = 0.35
+opacity = 0.4
+ax.bar(range(len(monthly_transactions)), monthly_transactions, bar_width, alpha=opacity)
+ax.set_xlabel('Month')
+ax.set_ylabel('Transactions')
+ax.set_title('Transactions per Month - Lower Manhattan')
+plt.savefig('/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png', dpi=300)
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 3878, in pandas._libs.tslibs.offsets._get_offset
+KeyError: 'MONTH'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 3979, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 3884, in pandas._libs.tslibs.offsets._get_offset
+ValueError: Invalid frequency: MONTH
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/frame.py", line 11392, in resample
+    return super().resample(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/generic.py", line 8858, in resample
+    return get_resampler(
+           ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/resample.py", line 1543, in get_resampler
+    tg = TimeGrouper(**kwds)
+         ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/resample.py", line 1613, in __init__
+    freq = to_offset(freq)
+           ^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/offsets.pyx", line 3891, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 3987, in pandas._libs.tslibs.offsets.to_offset
+ValueError: Invalid frequency: month
+
+
+Fix the python code above and return the new python code:
+2024-06-20 07:55:08 [INFO] Executing Step 1: CodeGenerator
+2024-06-20 07:55:17 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:55:17 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+86173,2023-06-07,16:26:11,3,8,Lower Manhattan,72,3.5,Loose Tea,Organic Chocolate,Spicy Eye Opener Chai,Sunday,6.0
+102323,2023-01-17,7:57:09,8,3,Hell's Kitchen,29,2.55,Coffee,Chai tea,Guatemalan Sustainably Grown,Tuesday,3.0
+68459,2023-03-24,15:50:06,1,5,Astoria,52,28.0,Tea,Brewed herbal tea,Lemon Grass Lg,Wednesday,5.3
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Draw a bar chart with the transactions per month of Lower Manhattan location
+
+You generated this python code:
+df = dfs[0]
+lower_manhattan_df = df[df['store_location'] == 'Lower Manhattan']
+monthly_transactions = lower_manhattan_df.resample('month', on='transaction_date')['Revenue'].count()
+fig, ax = plt.subplots()
+bar_width = 0.35
+opacity = 0.4
+ax.bar(range(len(monthly_transactions)), monthly_transactions, bar_width, alpha=opacity)
+ax.set_xlabel('Month')
+ax.set_ylabel('Transactions')
+ax.set_title('Transactions per Month - Lower Manhattan')
+plt.savefig('/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png', dpi=300)
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 3878, in pandas._libs.tslibs.offsets._get_offset
+KeyError: 'MONTH'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 3979, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 3884, in pandas._libs.tslibs.offsets._get_offset
+ValueError: Invalid frequency: MONTH
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/frame.py", line 11392, in resample
+    return super().resample(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/generic.py", line 8858, in resample
+    return get_resampler(
+           ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/resample.py", line 1543, in get_resampler
+    tg = TimeGrouper(**kwds)
+         ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandas/core/resample.py", line 1613, in __init__
+    freq = to_offset(freq)
+           ^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/offsets.pyx", line 3891, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 3987, in pandas._libs.tslibs.offsets.to_offset
+ValueError: Invalid frequency: month
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-20 07:55:17 [INFO] Code generated:
+            ```
+            df = dfs[0]
+lower_manhattan_df = df[df['store_location'] == 'Lower Manhattan']
+lower_manhattan_df['transaction_date'] = pd.to_datetime(lower_manhattan_df['transaction_date'])
+monthly_transactions = lower_manhattan_df.resample('M', on='transaction_date')['Revenue'].count()
+fig, ax = plt.subplots()
+bar_width = 0.35
+opacity = 0.4
+ax.bar(range(len(monthly_transactions)), monthly_transactions, bar_width, alpha=opacity)
+ax.set_xlabel('Month')
+ax.set_ylabel('Transactions')
+ax.set_title('Transactions per Month - Lower Manhattan')
+plt.savefig('/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png', dpi=300)
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+            ```
+            
+2024-06-20 07:55:17 [INFO] Executing Step 2: CodeCleaning
+2024-06-20 07:55:17 [INFO] Saving charts to /Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png
+2024-06-20 07:55:17 [INFO] 
+Code running:
+```
+df = dfs[0]
+lower_manhattan_df = df[df['store_location'] == 'Lower Manhattan']
+lower_manhattan_df['transaction_date'] = pd.to_datetime(lower_manhattan_df['transaction_date'])
+monthly_transactions = lower_manhattan_df.resample('M', on='transaction_date')['Revenue'].count()
+fig, ax = plt.subplots()
+bar_width = 0.35
+opacity = 0.4
+ax.bar(range(len(monthly_transactions)), monthly_transactions, bar_width, alpha=opacity)
+ax.set_xlabel('Month')
+ax.set_ylabel('Transactions')
+ax.set_title('Transactions per Month - Lower Manhattan')
+plt.savefig('/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png', dpi=300)
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+        ```
+2024-06-20 07:55:17 [INFO] Executing Step 7: ResultValidation
+2024-06-20 07:55:17 [INFO] Answer: {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+2024-06-20 07:55:17 [INFO] Executing Step 8: ResultParsing
+2024-06-20 07:55:48 [INFO] Question: Can you give me code of the last plot
+2024-06-20 07:55:48 [INFO] Running PandasAI with local LLM...
+2024-06-20 07:55:48 [INFO] Prompt ID: 58eacf3d-a7ec-420d-8302-e4f5e14771e1
+2024-06-20 07:55:48 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-20 07:55:48 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-20 07:55:48 [INFO] Executing Step 1: CacheLookup
+2024-06-20 07:55:48 [INFO] Executing Step 2: PromptGeneration
+2024-06-20 07:55:48 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Can you give me code of the last plot
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-20 07:55:48 [INFO] Executing Step 3: CodeGenerator
+2024-06-20 07:55:55 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:55:55 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Can you give me code of the last plot
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-20 07:55:55 [INFO] Code generated:
+            ```
+            # Import required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataframe (assuming it's a list of dataframes)
+dfs = []  # declare the variable with initial value []
+
+# TODO: load your data into dfs...
+
+# Get the last dataframe in the list
+last_df = dfs[-1]
+
+# Plot the transaction quantity vs store location
+plt.figure(figsize=(10,6))
+sns.scatterplot(x="store_location", y="transaction_qty", data=last_df)
+plt.title("Transaction Quantity vs Store Location")
+plt.xlabel("Store Location")
+plt.ylabel("Transaction Quantity")
+
+# Declare result variable as a dictionary of type and value
+result = {"type": "plot", "value": "transaction_quantity_vs_store_location.png"}
+            ```
+            
+2024-06-20 07:55:55 [INFO] Executing Step 4: CachePopulation
+2024-06-20 07:55:55 [INFO] Executing Step 5: CodeCleaning
+2024-06-20 07:55:55 [INFO] Saving charts to /Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png
+2024-06-20 07:55:55 [INFO] 
+Code running:
+```
+last_df = dfs[-1]
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='store_location', y='transaction_qty', data=last_df)
+plt.title('Transaction Quantity vs Store Location')
+plt.xlabel('Store Location')
+plt.ylabel('Transaction Quantity')
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+        ```
+2024-06-20 07:55:55 [INFO] Executing Step 6: CodeExecution
+2024-06-20 07:55:55 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+NameError: name 'sns' is not defined
+
+2024-06-20 07:55:55 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-06-20 07:55:55 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-20 07:55:55 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-20 07:55:55 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Can you give me code of the last plot
+
+You generated this python code:
+last_df = dfs[-1]
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='store_location', y='transaction_qty', data=last_df)
+plt.title('Transaction Quantity vs Store Location')
+plt.xlabel('Store Location')
+plt.ylabel('Transaction Quantity')
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+NameError: name 'sns' is not defined
+
+
+Fix the python code above and return the new python code:
+2024-06-20 07:55:55 [INFO] Executing Step 1: CodeGenerator
+2024-06-20 07:55:59 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:55:59 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Can you give me code of the last plot
+
+You generated this python code:
+last_df = dfs[-1]
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='store_location', y='transaction_qty', data=last_df)
+plt.title('Transaction Quantity vs Store Location')
+plt.xlabel('Store Location')
+plt.ylabel('Transaction Quantity')
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+NameError: name 'sns' is not defined
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-20 07:55:59 [INFO] Code generated:
+            ```
+            import seaborn as sns
+            ```
+            
+2024-06-20 07:55:59 [INFO] Executing Step 2: CodeCleaning
+2024-06-20 07:55:59 [INFO] 
+Code running:
+```
+
+        ```
+2024-06-20 07:55:59 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+2024-06-20 07:55:59 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-06-20 07:55:59 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-20 07:55:59 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-20 07:55:59 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Can you give me code of the last plot
+
+You generated this python code:
+
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+2024-06-20 07:55:59 [INFO] Executing Step 1: CodeGenerator
+2024-06-20 07:56:04 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:56:04 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Can you give me code of the last plot
+
+You generated this python code:
+
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-20 07:56:04 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+# Assuming 'dfs[0]' is your DataFrame
+
+# Group by Weekday and sum up Revenue
+weekday_revenue = dfs[0].groupby('Weekday')['Revenue'].sum().reset_index()
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+plt.bar(weekday_revenue['Weekday'], weekday_revenue['Revenue'])
+plt.xlabel('Weekday')
+plt.ylabel('Revenue')
+plt.title('Weekly Revenue by Weekday')
+plt.show()
+            ```
+            
+2024-06-20 07:56:04 [INFO] Executing Step 2: CodeCleaning
+2024-06-20 07:56:04 [INFO] 
+Code running:
+```
+weekday_revenue = dfs[0].groupby('Weekday')['Revenue'].sum().reset_index()
+plt.figure(figsize=(10, 6))
+plt.bar(weekday_revenue['Weekday'], weekday_revenue['Revenue'])
+plt.xlabel('Weekday')
+plt.ylabel('Revenue')
+plt.title('Weekly Revenue by Weekday')
+plt.show()
+        ```
+2024-06-20 07:56:04 [INFO] Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-06-20 07:56:04 [INFO] Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-06-20 07:56:04 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+2024-06-20 07:56:04 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2024-06-20 07:56:04 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-20 07:56:04 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-20 07:56:04 [INFO] Using prompt: <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Can you give me code of the last plot
+
+You generated this python code:
+weekday_revenue = dfs[0].groupby('Weekday')['Revenue'].sum().reset_index()
+plt.figure(figsize=(10, 6))
+plt.bar(weekday_revenue['Weekday'], weekday_revenue['Revenue'])
+plt.xlabel('Weekday')
+plt.ylabel('Revenue')
+plt.title('Weekly Revenue by Weekday')
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+2024-06-20 07:56:04 [INFO] Executing Step 1: CodeGenerator
+2024-06-20 07:56:09 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-20 07:56:09 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:149116x13
+transaction_id,transaction_date,transaction_time,transaction_qty,store_id,store_location,product_id,unit_price,product_category,product_type,product_detail,Weekday,Revenue
+130550,2023-05-30,17:12:09,2,8,Hell's Kitchen,29,2.55,Coffee,Organic Chocolate,Peppermint Rg,Friday,3.0
+76465,2023-03-17,7:26:14,1,5,Lower Manhattan,53,2.5,Flavours,Gourmet Beans,Columbian Medium Roast,Tuesday,45.0
+55449,2023-04-06,7:35:26,6,3,Astoria,60,8.95,Loose Tea,Barista Espresso,Lemon Grass Rg,Wednesday,8.0
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Can you give me code of the last plot
+
+You generated this python code:
+weekday_revenue = dfs[0].groupby('Weekday')['Revenue'].sum().reset_index()
+plt.figure(figsize=(10, 6))
+plt.bar(weekday_revenue['Weekday'], weekday_revenue['Revenue'])
+plt.xlabel('Weekday')
+plt.ylabel('Revenue')
+plt.title('Weekly Revenue by Weekday')
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-20 07:56:09 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is the dataframe you provided earlier
+weekday_revenue = dfs.groupby('Weekday')['Revenue'].sum().reset_index()
+
+plt.figure(figsize=(10, 6))
+plt.bar(weekday_revenue['Weekday'], weekday_revenue['Revenue'])
+plt.xlabel('Weekday')
+plt.ylabel('Revenue')
+plt.title('Weekly Revenue by Weekday')
+plt.show()
+            ```
+            
+2024-06-20 07:56:09 [INFO] Executing Step 2: CodeCleaning
+2024-06-20 07:56:09 [INFO] 
+Code running:
+```
+weekday_revenue = dfs.groupby('Weekday')['Revenue'].sum().reset_index()
+plt.figure(figsize=(10, 6))
+plt.bar(weekday_revenue['Weekday'], weekday_revenue['Revenue'])
+plt.xlabel('Weekday')
+plt.ylabel('Revenue')
+plt.title('Weekly Revenue by Weekday')
+plt.show()
+        ```
+2024-06-20 07:56:09 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'groupby'
+
+2024-06-20 07:56:09 [ERROR] Pipeline failed on step 6: 'list' object has no attribute 'groupby'
