@@ -5116,3 +5116,933 @@ plt.show()
 TypeError: list indices must be integers or slices, not str
 
 2024-06-19 21:21:15 [ERROR] Pipeline failed on step 6: list indices must be integers or slices, not str
+2024-06-19 21:34:03 [INFO] Question: create a pie chart based on location using matplotlib
+2024-06-19 21:34:03 [INFO] Running PandasAI with local LLM...
+2024-06-19 21:34:03 [INFO] Prompt ID: de5515e2-478b-4b1b-9b98-acdc6aa7377d
+2024-06-19 21:34:03 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-19 21:34:03 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-19 21:34:03 [INFO] Executing Step 1: CacheLookup
+2024-06-19 21:34:03 [INFO] Executing Step 2: PromptGeneration
+2024-06-19 21:34:03 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Indiana Jones et le Temple du Péril,,34.9 km/h (21.7 mph),Everland,SBNO December 2019,"April 8, 1995",Steel – Launched – Euro-Fighter,,52–77[2] in (132–196 cm),Force - One,,4.0,Tire propelled lift hill,$5.5 million[1],Single train with 8 cars. Riders are arranged 2 across in 2 rows for a total of 32 riders per train.,Thanksgiving,1:13,80 riders per hour,4 g,,65°,,,Fast Lane available,,Double Figure Eight,Fastrack available,,1997,"1979 (first park - now closed)December 24, 1997 (Orlando)2007 (Kissimmee) 2017 (Atlanta)",Pandemonium,municipal website,,,Finding Nemo,Single rider line available,Over the Shoulder Restraints,Flash Pass available,0 to 104 mph in 7 seconds,Individual lap bar,Déjà Vu,1984,-27.8626,-81.5877,Wood,2014-03-22,57 mph ,,110.0,km/h,,108.25,ft,183.7,3,4.4
+American Dreier Looping,"2,219 ft (676 m)",45 mph (72 km/h),Myrtle Beach Pavilion,Not Currently Operating,,Steel – Flying – Launched,Arthur Looff,,MotoCoaster,87 ft (27 m),14.0,,,2 trains with 3 cars. Riders are arranged 2 across in 4 rows for a total of 24 riders per train.,Old Western Times,,1040 riders per hour,,Daniel Pinfari,,208 ft (63 m),"March 13, 2013",,Race for Atlantis,,Fastrack available,"June 29, 2018","September 7, 1992",1955,Carolina Harbor,,Flash Pass Available,Must transfer from wheelchair,Black Forest/Autobahn,Single rider line available,"Individual ratcheting lap bar, formerly individual shoulder harness",,0 to 62.1 mph in 2.5 seconds,Over-the-shoulder with a belt between the legs,Rock 'n' Roller Coaster Starring Aerosmith,2005,,-89.7897,Other,2008-06-28,,27 km/h,75.0,,51.2,44.3,m,170.6,2,2.3
+Recoil (Wonderla Hyderabad),"1,975 ft (602 m)",,Phantasialand,,"March 31, 1973",Steel – Suspended – Family,"International Coasters, Inc.",130–195 cm (4 ft 3 in–6 ft 5 in),,132 ft (40 m),,2 LSM Launches,"€8,000,000",,,2:53,,5.9,Universal Creative,63°,221 ft (67 m),"June 7, 1997",Fast Lane available,Splashwater FallsGreat America Raceway,steel twister,,2 December 2013,,,,Official site,Flash Pass Available,Must transfer from wheelchair,,,,Flash Pass available,,,,1940,52.985,,Steel,,36 mph ,55.9 mph,,mph,54.1,,,,0,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ create a pie chart based on location using matplotlib
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-19 21:34:03 [INFO] Executing Step 3: CodeGenerator
+2024-06-19 21:34:14 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:34:14 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Indiana Jones et le Temple du Péril,,34.9 km/h (21.7 mph),Everland,SBNO December 2019,"April 8, 1995",Steel – Launched – Euro-Fighter,,52–77[2] in (132–196 cm),Force - One,,4.0,Tire propelled lift hill,$5.5 million[1],Single train with 8 cars. Riders are arranged 2 across in 2 rows for a total of 32 riders per train.,Thanksgiving,1:13,80 riders per hour,4 g,,65°,,,Fast Lane available,,Double Figure Eight,Fastrack available,,1997,"1979 (first park - now closed)December 24, 1997 (Orlando)2007 (Kissimmee) 2017 (Atlanta)",Pandemonium,municipal website,,,Finding Nemo,Single rider line available,Over the Shoulder Restraints,Flash Pass available,0 to 104 mph in 7 seconds,Individual lap bar,Déjà Vu,1984,-27.8626,-81.5877,Wood,2014-03-22,57 mph ,,110.0,km/h,,108.25,ft,183.7,3,4.4
+American Dreier Looping,"2,219 ft (676 m)",45 mph (72 km/h),Myrtle Beach Pavilion,Not Currently Operating,,Steel – Flying – Launched,Arthur Looff,,MotoCoaster,87 ft (27 m),14.0,,,2 trains with 3 cars. Riders are arranged 2 across in 4 rows for a total of 24 riders per train.,Old Western Times,,1040 riders per hour,,Daniel Pinfari,,208 ft (63 m),"March 13, 2013",,Race for Atlantis,,Fastrack available,"June 29, 2018","September 7, 1992",1955,Carolina Harbor,,Flash Pass Available,Must transfer from wheelchair,Black Forest/Autobahn,Single rider line available,"Individual ratcheting lap bar, formerly individual shoulder harness",,0 to 62.1 mph in 2.5 seconds,Over-the-shoulder with a belt between the legs,Rock 'n' Roller Coaster Starring Aerosmith,2005,,-89.7897,Other,2008-06-28,,27 km/h,75.0,,51.2,44.3,m,170.6,2,2.3
+Recoil (Wonderla Hyderabad),"1,975 ft (602 m)",,Phantasialand,,"March 31, 1973",Steel – Suspended – Family,"International Coasters, Inc.",130–195 cm (4 ft 3 in–6 ft 5 in),,132 ft (40 m),,2 LSM Launches,"€8,000,000",,,2:53,,5.9,Universal Creative,63°,221 ft (67 m),"June 7, 1997",Fast Lane available,Splashwater FallsGreat America Raceway,steel twister,,2 December 2013,,,,Official site,Flash Pass Available,Must transfer from wheelchair,,,,Flash Pass available,,,,1940,52.985,,Steel,,36 mph ,55.9 mph,,mph,54.1,,,,0,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ create a pie chart based on location using matplotlib
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-19 21:34:14 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is a list of DataFrames with Location column
+locations = [df['Location'].values for df in dfs]
+
+# Count the occurrences of each location
+location_counts = {loc: locations.count(loc) for loc in set(locations)}
+
+# Create a pie chart using matplotlib
+plt.figure(figsize=(8, 6))
+plt.pie(location_counts.values(), labels=location_counts.keys(), autopct='%1.1f%%')
+plt.title('Location Distribution')
+plt.show()
+
+result = {"type": "plot", "value": "location_pie_chart.png"}
+            ```
+            
+2024-06-19 21:34:14 [INFO] Executing Step 4: CachePopulation
+2024-06-19 21:34:14 [INFO] Executing Step 5: CodeCleaning
+2024-06-19 21:34:14 [INFO] Saving charts to /Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png
+2024-06-19 21:34:14 [INFO] 
+Code running:
+```
+locations = [df['Location'].values for df in dfs]
+location_counts = {loc: locations.count(loc) for loc in set(locations)}
+plt.figure(figsize=(8, 6))
+plt.pie(location_counts.values(), labels=location_counts.keys(), autopct='%1.1f%%')
+plt.title('Location Distribution')
+plt.show()
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+        ```
+2024-06-19 21:34:14 [INFO] Executing Step 6: CodeExecution
+2024-06-19 21:34:14 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+TypeError: unhashable type: 'numpy.ndarray'
+
+2024-06-19 21:34:14 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-06-19 21:34:14 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-19 21:34:14 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-19 21:34:14 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Indiana Jones et le Temple du Péril,,34.9 km/h (21.7 mph),Everland,SBNO December 2019,"April 8, 1995",Steel – Launched – Euro-Fighter,,52–77[2] in (132–196 cm),Force - One,,4.0,Tire propelled lift hill,$5.5 million[1],Single train with 8 cars. Riders are arranged 2 across in 2 rows for a total of 32 riders per train.,Thanksgiving,1:13,80 riders per hour,4 g,,65°,,,Fast Lane available,,Double Figure Eight,Fastrack available,,1997,"1979 (first park - now closed)December 24, 1997 (Orlando)2007 (Kissimmee) 2017 (Atlanta)",Pandemonium,municipal website,,,Finding Nemo,Single rider line available,Over the Shoulder Restraints,Flash Pass available,0 to 104 mph in 7 seconds,Individual lap bar,Déjà Vu,1984,-27.8626,-81.5877,Wood,2014-03-22,57 mph ,,110.0,km/h,,108.25,ft,183.7,3,4.4
+American Dreier Looping,"2,219 ft (676 m)",45 mph (72 km/h),Myrtle Beach Pavilion,Not Currently Operating,,Steel – Flying – Launched,Arthur Looff,,MotoCoaster,87 ft (27 m),14.0,,,2 trains with 3 cars. Riders are arranged 2 across in 4 rows for a total of 24 riders per train.,Old Western Times,,1040 riders per hour,,Daniel Pinfari,,208 ft (63 m),"March 13, 2013",,Race for Atlantis,,Fastrack available,"June 29, 2018","September 7, 1992",1955,Carolina Harbor,,Flash Pass Available,Must transfer from wheelchair,Black Forest/Autobahn,Single rider line available,"Individual ratcheting lap bar, formerly individual shoulder harness",,0 to 62.1 mph in 2.5 seconds,Over-the-shoulder with a belt between the legs,Rock 'n' Roller Coaster Starring Aerosmith,2005,,-89.7897,Other,2008-06-28,,27 km/h,75.0,,51.2,44.3,m,170.6,2,2.3
+Recoil (Wonderla Hyderabad),"1,975 ft (602 m)",,Phantasialand,,"March 31, 1973",Steel – Suspended – Family,"International Coasters, Inc.",130–195 cm (4 ft 3 in–6 ft 5 in),,132 ft (40 m),,2 LSM Launches,"€8,000,000",,,2:53,,5.9,Universal Creative,63°,221 ft (67 m),"June 7, 1997",Fast Lane available,Splashwater FallsGreat America Raceway,steel twister,,2 December 2013,,,,Official site,Flash Pass Available,Must transfer from wheelchair,,,,Flash Pass available,,,,1940,52.985,,Steel,,36 mph ,55.9 mph,,mph,54.1,,,,0,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ create a pie chart based on location using matplotlib
+
+You generated this python code:
+locations = [df['Location'].values for df in dfs]
+location_counts = {loc: locations.count(loc) for loc in set(locations)}
+plt.figure(figsize=(8, 6))
+plt.pie(location_counts.values(), labels=location_counts.keys(), autopct='%1.1f%%')
+plt.title('Location Distribution')
+plt.show()
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+TypeError: unhashable type: 'numpy.ndarray'
+
+
+Fix the python code above and return the new python code:
+2024-06-19 21:34:14 [INFO] Executing Step 1: CodeGenerator
+2024-06-19 21:34:19 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:34:19 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Indiana Jones et le Temple du Péril,,34.9 km/h (21.7 mph),Everland,SBNO December 2019,"April 8, 1995",Steel – Launched – Euro-Fighter,,52–77[2] in (132–196 cm),Force - One,,4.0,Tire propelled lift hill,$5.5 million[1],Single train with 8 cars. Riders are arranged 2 across in 2 rows for a total of 32 riders per train.,Thanksgiving,1:13,80 riders per hour,4 g,,65°,,,Fast Lane available,,Double Figure Eight,Fastrack available,,1997,"1979 (first park - now closed)December 24, 1997 (Orlando)2007 (Kissimmee) 2017 (Atlanta)",Pandemonium,municipal website,,,Finding Nemo,Single rider line available,Over the Shoulder Restraints,Flash Pass available,0 to 104 mph in 7 seconds,Individual lap bar,Déjà Vu,1984,-27.8626,-81.5877,Wood,2014-03-22,57 mph ,,110.0,km/h,,108.25,ft,183.7,3,4.4
+American Dreier Looping,"2,219 ft (676 m)",45 mph (72 km/h),Myrtle Beach Pavilion,Not Currently Operating,,Steel – Flying – Launched,Arthur Looff,,MotoCoaster,87 ft (27 m),14.0,,,2 trains with 3 cars. Riders are arranged 2 across in 4 rows for a total of 24 riders per train.,Old Western Times,,1040 riders per hour,,Daniel Pinfari,,208 ft (63 m),"March 13, 2013",,Race for Atlantis,,Fastrack available,"June 29, 2018","September 7, 1992",1955,Carolina Harbor,,Flash Pass Available,Must transfer from wheelchair,Black Forest/Autobahn,Single rider line available,"Individual ratcheting lap bar, formerly individual shoulder harness",,0 to 62.1 mph in 2.5 seconds,Over-the-shoulder with a belt between the legs,Rock 'n' Roller Coaster Starring Aerosmith,2005,,-89.7897,Other,2008-06-28,,27 km/h,75.0,,51.2,44.3,m,170.6,2,2.3
+Recoil (Wonderla Hyderabad),"1,975 ft (602 m)",,Phantasialand,,"March 31, 1973",Steel – Suspended – Family,"International Coasters, Inc.",130–195 cm (4 ft 3 in–6 ft 5 in),,132 ft (40 m),,2 LSM Launches,"€8,000,000",,,2:53,,5.9,Universal Creative,63°,221 ft (67 m),"June 7, 1997",Fast Lane available,Splashwater FallsGreat America Raceway,steel twister,,2 December 2013,,,,Official site,Flash Pass Available,Must transfer from wheelchair,,,,Flash Pass available,,,,1940,52.985,,Steel,,36 mph ,55.9 mph,,mph,54.1,,,,0,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ create a pie chart based on location using matplotlib
+
+You generated this python code:
+locations = [df['Location'].values for df in dfs]
+location_counts = {loc: locations.count(loc) for loc in set(locations)}
+plt.figure(figsize=(8, 6))
+plt.pie(location_counts.values(), labels=location_counts.keys(), autopct='%1.1f%%')
+plt.title('Location Distribution')
+plt.show()
+result = {'type': 'plot', 'value': '/Users/lagarto/Documents/AnalyticaSolutions/Portfolio/Data_Science/Pandas_AI/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+TypeError: unhashable type: 'numpy.ndarray'
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-19 21:34:19 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+import pandas as pd
+
+# Assuming dfs is a list of dataframes
+locations = set()
+for df in dfs:
+    locations.update(df['Location'].values)
+
+location_counts = {loc: len([df for df in dfs if loc in df['Location']]) for loc in locations}
+
+plt.figure(figsize=(8, 6))
+plt.pie(location_counts.values(), labels=location_counts.keys(), autopct='%1.1f%%')
+plt.title('Location Distribution')
+plt.show()
+            ```
+            
+2024-06-19 21:34:19 [INFO] Executing Step 2: CodeCleaning
+2024-06-19 21:34:19 [INFO] 
+Code running:
+```
+locations = set()
+for df in dfs:
+    locations.update(df['Location'].values)
+location_counts = {loc: len([df for df in dfs if loc in df['Location']]) for loc in locations}
+plt.figure(figsize=(8, 6))
+plt.pie(location_counts.values(), labels=location_counts.keys(), autopct='%1.1f%%')
+plt.title('Location Distribution')
+plt.show()
+        ```
+2024-06-19 21:34:20 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 6, in <module>
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/pyplot.py", line 3676, in pie
+    return gca().pie(
+           ^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/__init__.py", line 1473, in inner
+    return func(
+           ^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/axes/_axes.py", line 3334, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/patches.py", line 1242, in __init__
+    self._recompute_path()
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/patches.py", line 1254, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/path.py", line 958, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot convert float NaN to integer
+
+2024-06-19 21:34:20 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-06-19 21:34:20 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-19 21:34:20 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-19 21:34:20 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Indiana Jones et le Temple du Péril,,34.9 km/h (21.7 mph),Everland,SBNO December 2019,"April 8, 1995",Steel – Launched – Euro-Fighter,,52–77[2] in (132–196 cm),Force - One,,4.0,Tire propelled lift hill,$5.5 million[1],Single train with 8 cars. Riders are arranged 2 across in 2 rows for a total of 32 riders per train.,Thanksgiving,1:13,80 riders per hour,4 g,,65°,,,Fast Lane available,,Double Figure Eight,Fastrack available,,1997,"1979 (first park - now closed)December 24, 1997 (Orlando)2007 (Kissimmee) 2017 (Atlanta)",Pandemonium,municipal website,,,Finding Nemo,Single rider line available,Over the Shoulder Restraints,Flash Pass available,0 to 104 mph in 7 seconds,Individual lap bar,Déjà Vu,1984,-27.8626,-81.5877,Wood,2014-03-22,57 mph ,,110.0,km/h,,108.25,ft,183.7,3,4.4
+American Dreier Looping,"2,219 ft (676 m)",45 mph (72 km/h),Myrtle Beach Pavilion,Not Currently Operating,,Steel – Flying – Launched,Arthur Looff,,MotoCoaster,87 ft (27 m),14.0,,,2 trains with 3 cars. Riders are arranged 2 across in 4 rows for a total of 24 riders per train.,Old Western Times,,1040 riders per hour,,Daniel Pinfari,,208 ft (63 m),"March 13, 2013",,Race for Atlantis,,Fastrack available,"June 29, 2018","September 7, 1992",1955,Carolina Harbor,,Flash Pass Available,Must transfer from wheelchair,Black Forest/Autobahn,Single rider line available,"Individual ratcheting lap bar, formerly individual shoulder harness",,0 to 62.1 mph in 2.5 seconds,Over-the-shoulder with a belt between the legs,Rock 'n' Roller Coaster Starring Aerosmith,2005,,-89.7897,Other,2008-06-28,,27 km/h,75.0,,51.2,44.3,m,170.6,2,2.3
+Recoil (Wonderla Hyderabad),"1,975 ft (602 m)",,Phantasialand,,"March 31, 1973",Steel – Suspended – Family,"International Coasters, Inc.",130–195 cm (4 ft 3 in–6 ft 5 in),,132 ft (40 m),,2 LSM Launches,"€8,000,000",,,2:53,,5.9,Universal Creative,63°,221 ft (67 m),"June 7, 1997",Fast Lane available,Splashwater FallsGreat America Raceway,steel twister,,2 December 2013,,,,Official site,Flash Pass Available,Must transfer from wheelchair,,,,Flash Pass available,,,,1940,52.985,,Steel,,36 mph ,55.9 mph,,mph,54.1,,,,0,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ create a pie chart based on location using matplotlib
+
+You generated this python code:
+locations = set()
+for df in dfs:
+    locations.update(df['Location'].values)
+location_counts = {loc: len([df for df in dfs if loc in df['Location']]) for loc in locations}
+plt.figure(figsize=(8, 6))
+plt.pie(location_counts.values(), labels=location_counts.keys(), autopct='%1.1f%%')
+plt.title('Location Distribution')
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 6, in <module>
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/pyplot.py", line 3676, in pie
+    return gca().pie(
+           ^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/__init__.py", line 1473, in inner
+    return func(
+           ^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/axes/_axes.py", line 3334, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/patches.py", line 1242, in __init__
+    self._recompute_path()
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/patches.py", line 1254, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/matplotlib/path.py", line 958, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot convert float NaN to integer
+
+
+Fix the python code above and return the new python code:
+2024-06-19 21:34:20 [INFO] Executing Step 1: CodeGenerator
+2024-06-19 21:34:23 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:34:23 [ERROR] Pipeline failed on step 1: No code found in the response
+2024-06-19 21:34:23 [ERROR] Pipeline failed on step 6: No code found in the response
+2024-06-19 21:34:38 [INFO] Question: average length
+2024-06-19 21:34:38 [INFO] Running PandasAI with local LLM...
+2024-06-19 21:34:38 [INFO] Prompt ID: 336426a7-4d78-411f-a7bd-83081774cc28
+2024-06-19 21:34:38 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-19 21:34:38 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-19 21:34:38 [INFO] Executing Step 1: CacheLookup
+2024-06-19 21:34:38 [INFO] Executing Step 2: PromptGeneration
+2024-06-19 21:34:38 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ average length
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-19 21:34:38 [INFO] Executing Step 3: CodeGenerator
+2024-06-19 21:34:47 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:34:47 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ average length
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-19 21:34:47 [INFO] Code generated:
+            ```
+            Python
+# TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+dfs = []  # Declare variable dfs as empty list of dataframes
+# ...  # Add more dataframes to dfs if needed
+
+# Write code here
+highest_salary = max([int(row['Length']) for df in dfs for index, row in df.iterrows()])
+average_length = sum([int(row['Length']) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+
+# Declare result var: 
+result = { "type": "dict", "value": {"Highest Salary": highest_salary, "Average Length": average_length} }
+            ```
+            
+2024-06-19 21:34:47 [INFO] Executing Step 4: CachePopulation
+2024-06-19 21:34:47 [INFO] Executing Step 5: CodeCleaning
+2024-06-19 21:34:47 [INFO] 
+Code running:
+```
+Python
+highest_salary = max([int(row['Length']) for df in dfs for index, row in df.iterrows()])
+average_length = sum([int(row['Length']) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+result = {'type': 'dict', 'value': {'Highest Salary': highest_salary, 'Average Length': average_length}}
+        ```
+2024-06-19 21:34:47 [INFO] Executing Step 6: CodeExecution
+2024-06-19 21:34:47 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+NameError: name 'Python' is not defined
+
+2024-06-19 21:34:47 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-06-19 21:34:47 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-19 21:34:47 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-19 21:34:47 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ average length
+
+You generated this python code:
+Python
+highest_salary = max([int(row['Length']) for df in dfs for index, row in df.iterrows()])
+average_length = sum([int(row['Length']) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+result = {'type': 'dict', 'value': {'Highest Salary': highest_salary, 'Average Length': average_length}}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+NameError: name 'Python' is not defined
+
+
+Fix the python code above and return the new python code:
+2024-06-19 21:34:47 [INFO] Executing Step 1: CodeGenerator
+2024-06-19 21:34:52 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:34:52 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ average length
+
+You generated this python code:
+Python
+highest_salary = max([int(row['Length']) for df in dfs for index, row in df.iterrows()])
+average_length = sum([int(row['Length']) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+result = {'type': 'dict', 'value': {'Highest Salary': highest_salary, 'Average Length': average_length}}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+NameError: name 'Python' is not defined
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-19 21:34:52 [INFO] Code generated:
+            ```
+            import pandas as pd
+
+# assuming 'dfs' is a list of pandas DataFrame objects
+average_length = sum([row['Length'].strip('ft') for df in dfs for index, row in df.iterrows()]) / len(dfs)
+
+print("Average Length: ", average_length)
+            ```
+            
+2024-06-19 21:34:52 [INFO] Executing Step 2: CodeCleaning
+2024-06-19 21:34:52 [INFO] 
+Code running:
+```
+average_length = sum([row['Length'].strip('ft') for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+        ```
+2024-06-19 21:34:52 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+AttributeError: 'float' object has no attribute 'strip'
+
+2024-06-19 21:34:52 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-06-19 21:34:52 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-19 21:34:52 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-19 21:34:52 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ average length
+
+You generated this python code:
+average_length = sum([row['Length'].strip('ft') for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+AttributeError: 'float' object has no attribute 'strip'
+
+
+Fix the python code above and return the new python code:
+2024-06-19 21:34:52 [INFO] Executing Step 1: CodeGenerator
+2024-06-19 21:34:56 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:34:56 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ average length
+
+You generated this python code:
+average_length = sum([row['Length'].strip('ft') for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+AttributeError: 'float' object has no attribute 'strip'
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-19 21:34:56 [INFO] Code generated:
+            ```
+            average_length = sum([float(row['Length'].replace('ft', '')) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+            ```
+            
+2024-06-19 21:34:56 [INFO] Executing Step 2: CodeCleaning
+2024-06-19 21:34:56 [INFO] 
+Code running:
+```
+average_length = sum([float(row['Length'].replace('ft', '')) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+        ```
+2024-06-19 21:34:56 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+ValueError: could not convert string to float: '600\xa0 (180\xa0m)'
+
+2024-06-19 21:34:56 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2024-06-19 21:34:56 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-19 21:34:56 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-19 21:34:56 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ average length
+
+You generated this python code:
+average_length = sum([float(row['Length'].replace('ft', '')) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+ValueError: could not convert string to float: '600\xa0 (180\xa0m)'
+
+
+Fix the python code above and return the new python code:
+2024-06-19 21:34:56 [INFO] Executing Step 1: CodeGenerator
+2024-06-19 21:35:02 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:35:02 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Megafobia,"2,219 ft (676 m)",31.1 mph (50.1 km/h),Waldameer Park,Closed,"April 1, 2006",Steel – Shuttle – Boomerang,Allan Herschell Company,48–77 in (122–196 cm),Half Pipe Coaster (30m),,9.0,Both,"¥2,800,000,000",9 cars. Riders are arranged 2 across in 2 rows for a total of 36 riders per train.,Orient,,1000 (Currently 192) riders per hour,,,,,"April 30, 2013",Fast Lane available,,,Fastrack available,,"October 29, 2012","July 4, 1926 (95 years)",Justice League: Battle for Metropolis,,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,Lap Bar,,0–53 mph in 2.8 seconds,Over-the-shoulders restraint,Déjà Vu,2016,43.8438,,Other,2004-09-04,,,,km/h,45.6,,ft,252.6,7,2.2
+Euro-Mir,,,Fun Spot America (Kissimmee),,"May 22, 2009",Steel – spinning,Wisdom Rides,,Topper and I-Box Track,84 ft (25.6 m),,,,Single train with 5 cars. Riders are arranged 2 across in 2 rows for a total of 20 riders per train.,Country Fair,4 minutes,"1,400 riders per hour",1.2,Ed Vettel,66°,151 ft (46 m),"May 25, 2019; 2 years ago",Fast Lane available,Wildwasserbahn II,steel twister,Fastrack available,"March 24, 2005",,1955,,Six Flags Great Adventure,,,Snow White and the Seven Dwarfs,Single rider line available,,Flash Pass available,,,The Joker's Revenge,1967,51.348,135.4305,Wood,2017-06-11,52.8 mph ,81.3 km/h,120.0,,,33.3,,,5,2.7
+SpongeBob SquarePants Rock Bottom Plunge,3559.7 ft,68 mph (109 km/h),"Orlando, FloridaKissimmee, FloridaFayetteville, GeorgiaUnited States",Chapter 7 bankruptcy; rides dismantled and sold; property sold,,Steel – Inverted – Family,,130–195 cm (4 ft 3 in–6 ft 5 in),,109.3 ft (33.3 m),3.0,Two Tire propelled launches,"€4,000,000",,,1 min 13 sec,,4.7,John H. Brown,51°,91.4 ft (27.9 m),,,The Black Hole,"Out and Back, Twister",,"April 30, 2013",30 September 2006,,Wonder Woman Flight of Courage,www.suzukacircuit.jp,Flash Pass Available,Must transfer from wheelchair,Forbidden Forest (Harry Potter),,"Individual ratcheting lap bar, formerly individual shoulder harness",Flash Pass available,0 to 45 to 70mph,Lap Bar,,1959,,-71.249,Steel,,31.1 mph ,47 mph,56.3,mph,128.0,24.0,m,48.6,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ average length
+
+You generated this python code:
+average_length = sum([float(row['Length'].replace('ft', '')) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+ValueError: could not convert string to float: '600\xa0 (180\xa0m)'
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-19 21:35:02 [INFO] Code generated:
+            ```
+            average_length = sum([float(row['Length'].split(' ')[0].replace(',', '')) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+            ```
+            
+2024-06-19 21:35:02 [INFO] Executing Step 2: CodeCleaning
+2024-06-19 21:35:02 [INFO] 
+Code running:
+```
+average_length = sum([float(row['Length'].split(' ')[0].replace(',', '')) for df in dfs for index, row in df.iterrows()]) / len(dfs)
+print('Average Length: ', average_length)
+        ```
+2024-06-19 21:35:02 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+ValueError: could not convert string to float: '600\xa0ft'
+
+2024-06-19 21:35:02 [ERROR] Pipeline failed on step 6: could not convert string to float: '600\xa0ft'
+2024-06-19 21:35:30 [INFO] Question: give me the data type of every column
+2024-06-19 21:35:30 [INFO] Running PandasAI with local LLM...
+2024-06-19 21:35:30 [INFO] Prompt ID: 4a627362-b6ff-4336-ab26-c0161bc96e3f
+2024-06-19 21:35:30 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-06-19 21:35:30 [INFO] Executing Step 0: ValidatePipelineInput
+2024-06-19 21:35:30 [INFO] Executing Step 1: CacheLookup
+2024-06-19 21:35:30 [INFO] Executing Step 2: PromptGeneration
+2024-06-19 21:35:30 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Moto Coaster (Six Flags Darien Lake),,53.4 mph (85.9 km/h),Walibi Belgium,,31 March 2012,Steel – Euro-Fighter – Indoor,Roller Coaster Corporation of America,36[2] in (91 cm),,181 ft (55 m),0.0,Linear synchronous motor Launch,"$2,000,000",5 trains with a single car. Riders are arranged 4 across in 2 rows for a total of 8 riders per train.,The Dock Yard,3:00,,,Walt Disney ImagineeringSansei Technologies,,25.6 m (84 ft),"April 24, 2015",,,,,"May 25, 2019; 2 years ago",July 1998,"May 23, 1981",,,,,Music,Single rider line available,Lapbars with seatbelt and shinguards,Flash Pass available,,Individual lap block,Déjà Vu,2011,48.2639,-81.3722,Wood,1967-06-16,33 mph ,,74.0,mph,111.8,,ft,62.0,8,2.1
+Outlaw (roller coaster),"840 m (2,760 ft)",34 mph (55 km/h),New York-New York Hotel and Casino,Operating,"July 2, 1927",Steel – Wild Mouse – Enclosed,,,Wild Mouse (large park),,8.0,,,,Americana,,"1,750 riders per hour",4.2 & -1,"Werner Stengel, Wendelin Stückl",60°,179 ft (55 m),"July 2, 2019",Fast Lane available,Vonkaputous,Terrain roller coaster,Fastrack available,25 April 2008,4 November 2013,,Southern Cross,fun-spot.com,Flash Pass Available,Must transfer from wheelchair,Speedway,,Over-the-shoulder,,0 to 87 km/h (0 to 54 mph) in 4 seconds,,,2008,,2.5714,Steel,2000-05-06,59 mph ,104.9 km/h,78.4,km/h,,25.0,m,78.7,10,2.5
+The Dark Knight Coaster,"3,700 ft (1,100 m)",,Zoosafari Fasanolandia,Under construction,,Steel – Junior – Powered,Skytrak International,100 cm (3 ft 3 in),Suspended Looping Coaster (689m Standard),98.91 ft (30.15 m),,Chain lift hill,"US$24,000,000",4 trains with 2 cars. Riders are arranged 4 across in 2 rows for a total of 16 riders per train.,,49 seconds,1080 riders per hour,3.8,,35°,,,Fast Lane available,Cyclone,Out and back,Fastrack available,,,"August 4, 1961",Banshee,Six Flags Great Adventure,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,,Flash Pass available,0 to 38 mph (0 to 61 km/h) in 3 seconds,Over-the-shoulders restraint,The Joker's Revenge,2010,43.6161,,Other,,,29.9 km/h,,,24.9,60.0,,,1,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ give me the data type of every column
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-06-19 21:35:30 [INFO] Executing Step 3: CodeGenerator
+2024-06-19 21:35:37 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:35:37 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Moto Coaster (Six Flags Darien Lake),,53.4 mph (85.9 km/h),Walibi Belgium,,31 March 2012,Steel – Euro-Fighter – Indoor,Roller Coaster Corporation of America,36[2] in (91 cm),,181 ft (55 m),0.0,Linear synchronous motor Launch,"$2,000,000",5 trains with a single car. Riders are arranged 4 across in 2 rows for a total of 8 riders per train.,The Dock Yard,3:00,,,Walt Disney ImagineeringSansei Technologies,,25.6 m (84 ft),"April 24, 2015",,,,,"May 25, 2019; 2 years ago",July 1998,"May 23, 1981",,,,,Music,Single rider line available,Lapbars with seatbelt and shinguards,Flash Pass available,,Individual lap block,Déjà Vu,2011,48.2639,-81.3722,Wood,1967-06-16,33 mph ,,74.0,mph,111.8,,ft,62.0,8,2.1
+Outlaw (roller coaster),"840 m (2,760 ft)",34 mph (55 km/h),New York-New York Hotel and Casino,Operating,"July 2, 1927",Steel – Wild Mouse – Enclosed,,,Wild Mouse (large park),,8.0,,,,Americana,,"1,750 riders per hour",4.2 & -1,"Werner Stengel, Wendelin Stückl",60°,179 ft (55 m),"July 2, 2019",Fast Lane available,Vonkaputous,Terrain roller coaster,Fastrack available,25 April 2008,4 November 2013,,Southern Cross,fun-spot.com,Flash Pass Available,Must transfer from wheelchair,Speedway,,Over-the-shoulder,,0 to 87 km/h (0 to 54 mph) in 4 seconds,,,2008,,2.5714,Steel,2000-05-06,59 mph ,104.9 km/h,78.4,km/h,,25.0,m,78.7,10,2.5
+The Dark Knight Coaster,"3,700 ft (1,100 m)",,Zoosafari Fasanolandia,Under construction,,Steel – Junior – Powered,Skytrak International,100 cm (3 ft 3 in),Suspended Looping Coaster (689m Standard),98.91 ft (30.15 m),,Chain lift hill,"US$24,000,000",4 trains with 2 cars. Riders are arranged 4 across in 2 rows for a total of 16 riders per train.,,49 seconds,1080 riders per hour,3.8,,35°,,,Fast Lane available,Cyclone,Out and back,Fastrack available,,,"August 4, 1961",Banshee,Six Flags Great Adventure,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,,Flash Pass available,0 to 38 mph (0 to 61 km/h) in 3 seconds,Over-the-shoulders restraint,The Joker's Revenge,2010,43.6161,,Other,,,29.9 km/h,,,24.9,60.0,,,1,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ give me the data type of every column
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-06-19 21:35:37 [INFO] Code generated:
+            ```
+            # Import required dependencies
+import pandas as pd
+
+# Declare result var:
+result = []
+
+# Iterate over each dataframe in dfs list
+for df in dfs:
+    # Initialize an empty dictionary to store column-wise data type information
+    column_types = {}
+    
+    # Get the column names and their corresponding data types
+    for col_name, col_type in zip(df.columns.tolist(), df.dtypes):
+        column_types[col_name] = str(col_type)
+        
+    # Add the column-wise data type information as a dictionary to result list
+    result.append({"type": "dataframe", "value": column_types})
+
+print(result)
+            ```
+            
+2024-06-19 21:35:37 [INFO] Executing Step 4: CachePopulation
+2024-06-19 21:35:37 [INFO] Executing Step 5: CodeCleaning
+2024-06-19 21:35:37 [INFO] 
+Code running:
+```
+result = []
+for df in dfs:
+    column_types = {}
+    for col_name, col_type in zip(df.columns.tolist(), df.dtypes):
+        column_types[col_name] = str(col_type)
+    result.append({'type': 'dataframe', 'value': column_types})
+print(result)
+        ```
+2024-06-19 21:35:37 [INFO] Executing Step 6: CodeExecution
+2024-06-19 21:35:37 [ERROR] Failed with error: Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 5, in <module>
+KeyError: '__import__'
+
+2024-06-19 21:35:37 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-06-19 21:35:37 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-06-19 21:35:37 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-06-19 21:35:37 [INFO] Using prompt: <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Moto Coaster (Six Flags Darien Lake),,53.4 mph (85.9 km/h),Walibi Belgium,,31 March 2012,Steel – Euro-Fighter – Indoor,Roller Coaster Corporation of America,36[2] in (91 cm),,181 ft (55 m),0.0,Linear synchronous motor Launch,"$2,000,000",5 trains with a single car. Riders are arranged 4 across in 2 rows for a total of 8 riders per train.,The Dock Yard,3:00,,,Walt Disney ImagineeringSansei Technologies,,25.6 m (84 ft),"April 24, 2015",,,,,"May 25, 2019; 2 years ago",July 1998,"May 23, 1981",,,,,Music,Single rider line available,Lapbars with seatbelt and shinguards,Flash Pass available,,Individual lap block,Déjà Vu,2011,48.2639,-81.3722,Wood,1967-06-16,33 mph ,,74.0,mph,111.8,,ft,62.0,8,2.1
+Outlaw (roller coaster),"840 m (2,760 ft)",34 mph (55 km/h),New York-New York Hotel and Casino,Operating,"July 2, 1927",Steel – Wild Mouse – Enclosed,,,Wild Mouse (large park),,8.0,,,,Americana,,"1,750 riders per hour",4.2 & -1,"Werner Stengel, Wendelin Stückl",60°,179 ft (55 m),"July 2, 2019",Fast Lane available,Vonkaputous,Terrain roller coaster,Fastrack available,25 April 2008,4 November 2013,,Southern Cross,fun-spot.com,Flash Pass Available,Must transfer from wheelchair,Speedway,,Over-the-shoulder,,0 to 87 km/h (0 to 54 mph) in 4 seconds,,,2008,,2.5714,Steel,2000-05-06,59 mph ,104.9 km/h,78.4,km/h,,25.0,m,78.7,10,2.5
+The Dark Knight Coaster,"3,700 ft (1,100 m)",,Zoosafari Fasanolandia,Under construction,,Steel – Junior – Powered,Skytrak International,100 cm (3 ft 3 in),Suspended Looping Coaster (689m Standard),98.91 ft (30.15 m),,Chain lift hill,"US$24,000,000",4 trains with 2 cars. Riders are arranged 4 across in 2 rows for a total of 16 riders per train.,,49 seconds,1080 riders per hour,3.8,,35°,,,Fast Lane available,Cyclone,Out and back,Fastrack available,,,"August 4, 1961",Banshee,Six Flags Great Adventure,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,,Flash Pass available,0 to 38 mph (0 to 61 km/h) in 3 seconds,Over-the-shoulders restraint,The Joker's Revenge,2010,43.6161,,Other,,,29.9 km/h,,,24.9,60.0,,,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ give me the data type of every column
+
+You generated this python code:
+result = []
+for df in dfs:
+    column_types = {}
+    for col_name, col_type in zip(df.columns.tolist(), df.dtypes):
+        column_types[col_name] = str(col_type)
+    result.append({'type': 'dataframe', 'value': column_types})
+print(result)
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 5, in <module>
+KeyError: '__import__'
+
+
+Fix the python code above and return the new python code:
+2024-06-19 21:35:37 [INFO] Executing Step 1: CodeGenerator
+2024-06-19 21:35:41 [INFO] HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-19 21:35:41 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:1087x56
+coaster_name,Length,Speed,Location,Status,Opening date,Type,Manufacturer,Height restriction,Model,Height,Inversions,Lift/launch system,Cost,Trains,Park section,Duration,Capacity,G-force,Designer,Max vertical angle,Drop,Soft opening date,Fast Lane available,Replaced,Track layout,Fastrack available,Soft opening date.1,Closing date,Opened,Replaced by,Website,Flash Pass Available,Must transfer from wheelchair,Theme,Single rider line available,Restraint Style,Flash Pass available,Acceleration,Restraints,Name,year_introduced,latitude,longitude,Type_Main,opening_date_clean,speed1,speed2,speed1_value,speed1_unit,speed_mph,height_value,height_unit,height_ft,Inversions_clean,Gforce_clean
+Moto Coaster (Six Flags Darien Lake),,53.4 mph (85.9 km/h),Walibi Belgium,,31 March 2012,Steel – Euro-Fighter – Indoor,Roller Coaster Corporation of America,36[2] in (91 cm),,181 ft (55 m),0.0,Linear synchronous motor Launch,"$2,000,000",5 trains with a single car. Riders are arranged 4 across in 2 rows for a total of 8 riders per train.,The Dock Yard,3:00,,,Walt Disney ImagineeringSansei Technologies,,25.6 m (84 ft),"April 24, 2015",,,,,"May 25, 2019; 2 years ago",July 1998,"May 23, 1981",,,,,Music,Single rider line available,Lapbars with seatbelt and shinguards,Flash Pass available,,Individual lap block,Déjà Vu,2011,48.2639,-81.3722,Wood,1967-06-16,33 mph ,,74.0,mph,111.8,,ft,62.0,8,2.1
+Outlaw (roller coaster),"840 m (2,760 ft)",34 mph (55 km/h),New York-New York Hotel and Casino,Operating,"July 2, 1927",Steel – Wild Mouse – Enclosed,,,Wild Mouse (large park),,8.0,,,,Americana,,"1,750 riders per hour",4.2 & -1,"Werner Stengel, Wendelin Stückl",60°,179 ft (55 m),"July 2, 2019",Fast Lane available,Vonkaputous,Terrain roller coaster,Fastrack available,25 April 2008,4 November 2013,,Southern Cross,fun-spot.com,Flash Pass Available,Must transfer from wheelchair,Speedway,,Over-the-shoulder,,0 to 87 km/h (0 to 54 mph) in 4 seconds,,,2008,,2.5714,Steel,2000-05-06,59 mph ,104.9 km/h,78.4,km/h,,25.0,m,78.7,10,2.5
+The Dark Knight Coaster,"3,700 ft (1,100 m)",,Zoosafari Fasanolandia,Under construction,,Steel – Junior – Powered,Skytrak International,100 cm (3 ft 3 in),Suspended Looping Coaster (689m Standard),98.91 ft (30.15 m),,Chain lift hill,"US$24,000,000",4 trains with 2 cars. Riders are arranged 4 across in 2 rows for a total of 16 riders per train.,,49 seconds,1080 riders per hour,3.8,,35°,,,Fast Lane available,Cyclone,Out and back,Fastrack available,,,"August 4, 1961",Banshee,Six Flags Great Adventure,Flash Pass Available,Must transfer from wheelchair,,Single rider line available,,Flash Pass available,0 to 38 mph (0 to 61 km/h) in 3 seconds,Over-the-shoulders restraint,The Joker's Revenge,2010,43.6161,,Other,,,29.9 km/h,,,24.9,60.0,,,1,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ give me the data type of every column
+
+You generated this python code:
+result = []
+for df in dfs:
+    column_types = {}
+    for col_name, col_type in zip(df.columns.tolist(), df.dtypes):
+        column_types[col_name] = str(col_type)
+    result.append({'type': 'dataframe', 'value': column_types})
+print(result)
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.12/site-packages/pandasai/pipelines/chat/code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 5, in <module>
+KeyError: '__import__'
+
+
+Fix the python code above and return the new python code:
+            
+2024-06-19 21:35:41 [INFO] Code generated:
+            ```
+            Python
+import pandas as pd
+
+data = ...
+
+df = pd.DataFrame(data)
+
+column_types = dict(zip(df.columns.tolist(), df.dtypes.astype(str)))
+
+print(column_types)
+            ```
+            
+2024-06-19 21:35:41 [INFO] Executing Step 2: CodeCleaning
+2024-06-19 21:35:41 [ERROR] Pipeline failed on step 2: name 'Python' is not defined
+2024-06-19 21:35:41 [ERROR] Pipeline failed on step 6: name 'Python' is not defined
